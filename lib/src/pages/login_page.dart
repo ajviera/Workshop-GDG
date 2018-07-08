@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
     if (validateAndSave()) {
       try {
-        FirebaseUser user = _formType == FormType.login
+        User user = _formType == FormType.login
             ? await widget.auth.signIn(_email, _password)
             : await widget.auth.createUser(_email, _password);
         showDialog(
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
   void validateAndSubmitWithGoogleAuth() async {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
     try {
-      FirebaseUser user = await widget.auth.signInWithGoogle();
+      User user = await widget.auth.signInWithGoogle();
       showDialog(
         context: context,
         builder: (_) =>
@@ -185,8 +185,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: new RaisedButton(
                     elevation: 7.0,
                     shape: new RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(_buttonHeight / 2))),
+                        borderRadius: BorderRadius
+                            .all(Radius.circular(_buttonHeight / 2))),
                     color: Colors.white,
                     key: new Key('login/register'),
                     child: new Column(

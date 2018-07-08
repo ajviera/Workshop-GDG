@@ -23,7 +23,7 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   int _selectedDrawerIndex = 0;
-  FirebaseUser user;
+  User user;
 
   _getDrawerItemWidget(int pos) {
     switch (pos) {
@@ -41,7 +41,7 @@ class HomePageState extends State<HomePage> {
 
   initState() {
     super.initState();
-    widget.auth.currentUser().then((FirebaseUser userResponse) {
+    widget.auth.currentUser().then((User userResponse) {
       setState(() {
         this.user = userResponse;
       });
@@ -75,7 +75,6 @@ class HomePageState extends State<HomePage> {
           onSignOut: widget.onSignOut,
           user: user,
           drawerOptions: drawerOptions),
-      // bottomNavigationBar: new HomeBottomNavigationBar(),
       body: _getDrawerItemWidget(_selectedDrawerIndex),
     );
   }

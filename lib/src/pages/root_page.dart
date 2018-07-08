@@ -15,11 +15,11 @@ enum AuthStatus {
 
 class _RootPageState extends State<RootPage> {
   AuthStatus authStatus = AuthStatus.notSignedIn;
-  FirebaseUser user;
+  User user;
 
   initState() {
     super.initState();
-    widget.auth.currentUser().then((FirebaseUser userResponse) {
+    widget.auth.currentUser().then((User userResponse) {
       setState(() {
         authStatus =
             userResponse != null ? AuthStatus.signedIn : AuthStatus.notSignedIn;

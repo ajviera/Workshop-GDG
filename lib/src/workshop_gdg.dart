@@ -14,7 +14,7 @@ part 'pages/login_page.dart';
 part 'pages/root_page.dart';
 part 'pages/user_details_page.dart';
 part 'services/auth.dart';
-part 'widgets/home_bottom_navigation_bar.dart';
+part 'services/base_auth.dart';
 part 'widgets/home_drawer.dart';
 part 'widgets/primary_button.dart';
 part 'widgets/row_padded.dart';
@@ -28,7 +28,7 @@ class WorkshopGDGApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Workshop GDG',
       theme: new ThemeData(
-        primarySwatch: Colors.red[400],
+        primarySwatch: Colors.blue[400],
       ),
       home: new RootPage(auth: new Auth()),
     );

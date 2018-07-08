@@ -1,40 +1,34 @@
 part of workshopgdg;
 
-abstract class BaseAuth {
-  Future<FirebaseUser> currentUser();
-  Future<FirebaseUser> signIn(String email, String password);
-  Future<FirebaseUser> createUser(String email, String password);
-  Future<FirebaseUser> signInWithGoogle();
-  Future<FirebaseUser> signOutWithGoogle();
-  Future<void> signOut();
-}
-
 class Auth implements BaseAuth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = new GoogleSignIn();
 
-  Future<FirebaseUser> signIn(String email, String password) async {
+  Future<User> signIn(String email, String password) async {
     FirebaseUser user = await _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
-    return user;
+    return _createUser(user);
   }
 
-  Future<FirebaseUser> createUser(String email, String password) async {
+  Future<User> createUser(String email, String password) async {
     FirebaseUser user = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
-    return user;
+    return _createUser(user);
   }
 
-  Future<FirebaseUser> currentUser() async {
+  Future<User> currentUser() async {
     final FirebaseUser currentUser = await _firebaseAuth.currentUser();
-    return currentUser;
+    return _createUser(currentUser);
   }
 
   Future<void> signOut() async {
-    signOutWithGoogle();
+    // Sign out with firebase
+    await _firebaseAuth.signOut();
+    // Sign out with google
+    await _googleSignIn.signOut();
   }
 
-  Future<FirebaseUser> signInWithGoogle() async {
+  Future<User> signInWithGoogle() async {
     GoogleSignInAccount currentUser = _googleSignIn.currentUser;
     if (currentUser == null) {
       currentUser = await _googleSignIn.signInSilently();
@@ -53,13 +47,15 @@ class Auth implements BaseAuth {
     assert(user != null);
     assert(!user.isAnonymous);
 
-    return user;
+    return _createUser(user);
   }
 
-  Future<Null> signOutWithGoogle() async {
-    // Sign out with firebase
-    await _firebaseAuth.signOut();
-    // Sign out with google
-    await _googleSignIn.signOut();
+  User _createUser(FirebaseUser firebaseUser) {
+    return User(
+      email: firebaseUser.email,
+      id: firebaseUser.uid,
+      name: firebaseUser.displayName,
+      photoUrl: firebaseUser.photoUrl,
+    );
   }
 }

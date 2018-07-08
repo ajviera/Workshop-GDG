@@ -6,20 +6,21 @@ class UserCircleAvatar extends StatelessWidget {
     @required this.user,
   }) : super(key: key);
 
-  final FirebaseUser user;
+  final User user;
 
   @override
   Widget build(BuildContext context) {
     return new CircleAvatar(
         backgroundColor: Colors.white,
         radius: 40.0,
-        backgroundImage: imageUser());
+        backgroundImage: _imageUser());
   }
-    imageUser() {
+
+  _imageUser() {
     if (user.photoUrl != null) {
       return new NetworkImage(user.photoUrl);
     } else {
-      return new AssetImage('assets/images/iron-man-silhouette.png');
+      return new AssetImage('assets/images/logo-gdg.png');
     }
   }
 }
