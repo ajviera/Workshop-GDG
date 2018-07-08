@@ -1,8 +1,17 @@
-# workshop_gdg
+# Flutter Workshop para GDG Buenos Aires
 
-A new Flutter project.
+![Image](workshop.png)
 
-## Getting Started
+## ¿Cómo sigo?
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+- [Flutter Official Docs](https://flutter.io/)
+- [Udacity Free Course](https://t.co/gqwINk5GGM)
+- [Awesome Flutter](https://t.co/f0NwrRdtDs)
+- [MTechViral Video Tutorials](https://t.co/rgZpLsjzA3)
+- [Flutter Example Apps](https://t.co/CgZMDRHngv)
+- [Coding With Flutter](https://codingwithflutter.com/)
+- Twitter:
+  - [Andrea Bizzotto](https://twitter.com/biz84)
+  - [Pawan](https://twitter.com/imthepk)
+  - [Rohan Taneja](https://twitter.com/rohantaneja_)
+  - [FlutterDev](https://twitter.com/r_FlutterDev)
