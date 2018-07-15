@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 part 'models/user.dart';
+part 'pages/hello_page.dart';
 part 'pages/home_page.dart';
 part 'pages/login_page.dart';
 part 'pages/root_page.dart';
@@ -28,7 +29,7 @@ class WorkshopGDGApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Workshop GDG',
       theme: new ThemeData(
-        primarySwatch: Colors.blue[400],
+        primarySwatch: Colors.blue,
       ),
       home: new RootPage(auth: new Auth()),
     );

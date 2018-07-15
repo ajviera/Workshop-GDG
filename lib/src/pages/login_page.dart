@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
     if (validateAndSave()) {
       try {
-        User user = _formType == FormType.login
+        FirebaseUser user = _formType == FormType.login
             ? await widget.auth.signIn(_email, _password)
             : await widget.auth.createUser(_email, _password);
         showDialog(
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
   void validateAndSubmitWithGoogleAuth() async {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
     try {
-      User user = await widget.auth.signInWithGoogle();
+      FirebaseUser user = await widget.auth.signInWithGoogle();
       showDialog(
         context: context,
         builder: (_) =>
@@ -199,7 +199,7 @@ class _LoginPageState extends State<LoginPage> {
                                 padding: const EdgeInsets.only(right: 8.0),
                                 child: new Image(
                                   image: AssetImage(
-                                      'assets/images/google-logo-1.png'),
+                                      'assets/images/google-logo.png'),
                                   width: 20.0,
                                   height: 20.0,
                                 ),

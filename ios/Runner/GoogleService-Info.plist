@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>997432345452-uheo5h95j4636r7j14jhl0v617lhqfba.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.997432345452-uheo5h95j4636r7j14jhl0v617lhqfba</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBA8NaMjO04NIHRjceoEenZrq8ho1TNI7k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>997432345452</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.workshopGdg</string>
+	<key>PROJECT_ID</key>
+	<string>workshop-gdg-f2795</string>
+	<key>STORAGE_BUCKET</key>
+	<string>workshop-gdg-f2795.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:997432345452:ios:64153b3502b51f00</string>
+	<key>DATABASE_URL</key>
+	<string>https://workshop-gdg-f2795.firebaseio.com</string>
+</dict>
+</plist>

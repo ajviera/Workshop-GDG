@@ -4,21 +4,21 @@ class Auth implements BaseAuth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = new GoogleSignIn();
 
-  Future<User> signIn(String email, String password) async {
+  Future<FirebaseUser> signIn(String email, String password) async {
     FirebaseUser user = await _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
-    return _createUser(user);
+    return user;
   }
 
-  Future<User> createUser(String email, String password) async {
+  Future<FirebaseUser> createUser(String email, String password) async {
     FirebaseUser user = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
-    return _createUser(user);
+    return user;
   }
 
-  Future<User> currentUser() async {
+  Future<FirebaseUser> currentUser() async {
     final FirebaseUser currentUser = await _firebaseAuth.currentUser();
-    return _createUser(currentUser);
+    return currentUser;
   }
 
   Future<void> signOut() async {
@@ -28,7 +28,7 @@ class Auth implements BaseAuth {
     await _googleSignIn.signOut();
   }
 
-  Future<User> signInWithGoogle() async {
+  Future<FirebaseUser> signInWithGoogle() async {
     GoogleSignInAccount currentUser = _googleSignIn.currentUser;
     if (currentUser == null) {
       currentUser = await _googleSignIn.signInSilently();
@@ -47,15 +47,6 @@ class Auth implements BaseAuth {
     assert(user != null);
     assert(!user.isAnonymous);
 
-    return _createUser(user);
-  }
-
-  User _createUser(FirebaseUser firebaseUser) {
-    return User(
-      email: firebaseUser.email,
-      id: firebaseUser.uid,
-      name: firebaseUser.displayName,
-      photoUrl: firebaseUser.photoUrl,
-    );
+    return user;
   }
 }

@@ -14,6 +14,7 @@ class HomePage extends StatefulWidget {
 
   final drawerItems = [
     new DrawerItem("Hello World", Icons.search),
+    new DrawerItem("User Details", Icons.cloud_circle),
     new DrawerItem("Bye World", Icons.history),
   ];
 
@@ -23,16 +24,16 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   int _selectedDrawerIndex = 0;
-  User user;
+  FirebaseUser user;
 
   _getDrawerItemWidget(int pos) {
     switch (pos) {
-      // case 0:
-      //   return new HelloPage(auth: widget.auth);
-      // case 1:
-      //   return new ByePage(auth: widget.auth);
+      case 0:
+        return new HelloPage();
+      case 1:
+        return new UserDetailsPage(user: this.user);
       // case 2:
-      //   return new ThirdFragment();
+        // return new ByePage();
 
       default:
         return new Text("Error");
@@ -41,7 +42,7 @@ class HomePageState extends State<HomePage> {
 
   initState() {
     super.initState();
-    widget.auth.currentUser().then((User userResponse) {
+    widget.auth.currentUser().then((FirebaseUser userResponse) {
       setState(() {
         this.user = userResponse;
       });

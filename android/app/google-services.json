@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "997432345452",
+    "firebase_url": "https://workshop-gdg-f2795.firebaseio.com",
+    "project_id": "workshop-gdg-f2795",
+    "storage_bucket": "workshop-gdg-f2795.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997432345452:android:fb2ace83c8175e58",
+        "android_client_info": {
+          "package_name": "com.example.workshopgdg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997432345452-8bc6538vqcu8a2fqbqv5vglavo7sccbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlhbtotIklMGlXTrnrIuRgC0fyUzM3Pi4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

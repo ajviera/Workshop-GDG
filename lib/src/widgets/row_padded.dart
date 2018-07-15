@@ -14,7 +14,7 @@ class RowPadded extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       decoration: new BoxDecoration(
-          border: new Border.all(color: const Color(0x80000000)),
+          border: new Border.all(color: Colors.blue),
           borderRadius: new BorderRadius.circular(5.0)),
       padding: const EdgeInsets.all(15.0),
       margin: const EdgeInsets.all(10.0),
@@ -39,7 +39,7 @@ class RowPadded extends StatelessWidget {
           new Text(
             secondaryText,
             style: new TextStyle(
-              color: Colors.grey[500],
+              color: Colors.grey,
             ),
           ),
         ],

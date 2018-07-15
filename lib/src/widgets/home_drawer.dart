@@ -11,7 +11,7 @@ class HomeDrawer extends StatelessWidget {
 
   final BaseAuth auth;
   final VoidCallback onSignOut;
-  final User user;
+  final FirebaseUser user;
   final List<Widget> drawerOptions;
 
   @override
@@ -26,7 +26,7 @@ class HomeDrawer extends StatelessWidget {
                   // onDetailsPressed: () => showUserDetails(context),
                   currentAccountPicture: new UserCircleAvatar(user: user),
                   accountName: new Text(
-                      user.name != null ? user.name : ''),
+                      user.displayName != null ? user.displayName : ''),
                   accountEmail: new Text(user.email)),
               new Column(children: drawerOptions)
             ],

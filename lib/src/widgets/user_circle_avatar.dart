@@ -6,7 +6,7 @@ class UserCircleAvatar extends StatelessWidget {
     @required this.user,
   }) : super(key: key);
 
-  final User user;
+  final FirebaseUser user;
 
   @override
   Widget build(BuildContext context) {

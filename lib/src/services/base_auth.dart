@@ -1,9 +1,9 @@
 part of workshopgdg;
 
 abstract class BaseAuth {
-  Future<User> currentUser();
-  Future<User> signIn(String email, String password);
-  Future<User> createUser(String email, String password);
-  Future<User> signInWithGoogle();
+  Future<FirebaseUser> currentUser();
+  Future<FirebaseUser> signIn(String email, String password);
+  Future<FirebaseUser> createUser(String email, String password);
+  Future<FirebaseUser> signInWithGoogle();
   Future<void> signOut();
 }
