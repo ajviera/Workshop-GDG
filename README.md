@@ -2,6 +2,14 @@
 
 ![Image](workshop.png)
 
+## Intro
+
+La idea de este workshop es arrancar desde cero y usar Flutter junto a Firebase, intentando jugar y aprender cosas nuevas al mismo tiempo. Dentro de este código puse todo lo que fui aprendiendo en
+estos pocos meses desde que comencé con Flutter.
+
+Por favor, cualquier sugerencia que tengan del mismo, no duden en decirla. El objetivo es seguir
+aprendiendo y que la comunidad de Flutter no pare de crecer en Argentina.
+
 ## ¿Cómo sigo?
 
 - [Flutter Official Docs](https://flutter.io/)

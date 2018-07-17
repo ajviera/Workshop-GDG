@@ -155,13 +155,21 @@ class _LoginPageState extends State<LoginPage> {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.grey[200],
       body: new Center(
         child: new SingleChildScrollView(
           child: new Container(
-            padding: const EdgeInsets.all(16.0),
             child: new Column(children: [
+              new Container(
+                margin: const EdgeInsets.only(bottom: 20.0),
+                child: new Image.asset(
+                  'assets/images/logo-gdg.png',
+                  height: 150.0,
+                  width: 150.0,
+                ),
+              ),
               new Card(
+                elevation: 10.0,
                 child: new Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[

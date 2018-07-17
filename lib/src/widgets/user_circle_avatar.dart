@@ -10,10 +10,24 @@ class UserCircleAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new CircleAvatar(
+    return new Container(
+      decoration: new BoxDecoration(
+        borderRadius: BorderRadius.circular(80.0),
+        boxShadow: <BoxShadow>[
+          new BoxShadow(
+            color: Colors.black,
+            blurRadius: 10.0,
+          ),
+        ],
+      ),
+      height: 150.0,
+      width: 150.0,
+      child: new CircleAvatar(
         backgroundColor: Colors.white,
         radius: 40.0,
-        backgroundImage: _imageUser());
+        backgroundImage: _imageUser(),
+      ),
+    );
   }
 
   _imageUser() {

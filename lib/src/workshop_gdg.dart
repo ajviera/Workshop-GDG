@@ -18,7 +18,6 @@ part 'services/auth.dart';
 part 'services/base_auth.dart';
 part 'widgets/home_drawer.dart';
 part 'widgets/primary_button.dart';
-part 'widgets/row_padded.dart';
 part 'widgets/show_login_dialog.dart';
 part 'widgets/user_circle_avatar.dart';
 
