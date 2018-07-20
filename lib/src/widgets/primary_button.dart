@@ -13,10 +13,13 @@ class PrimaryButton extends StatelessWidget {
     return new ConstrainedBox(
       constraints: BoxConstraints.expand(height: height),
       child: new RaisedButton(
-        child: new Text(text,
-            style: new TextStyle(color: Colors.white, fontSize: 20.0)),
+        child: new Text(
+          text,
+          style: new TextStyle(color: Colors.white, fontSize: 20.0),
+        ),
         shape: new RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(height / 2))),
+          borderRadius: BorderRadius.all(Radius.circular(height / 2)),
+        ),
         color: Colors.red,
         textColor: Colors.black87,
         onPressed: onPressed,

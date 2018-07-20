@@ -19,6 +19,8 @@ class _LoginPageState extends State<LoginPage> {
   String _email;
   String _password;
   FormType _formType = FormType.login;
+
+  // Definimos un alto para poder usar en todos lados y que siempre sea el mismo.
   final double _buttonHeight = 44.0;
 
   bool validateAndSave() {
@@ -96,21 +98,22 @@ class _LoginPageState extends State<LoginPage> {
     return [
       padded(
         child: new TextFormField(
-            key: new Key('email'),
-            decoration: new InputDecoration(labelText: 'Email'),
-            autocorrect: false,
-            validator: (val) => val.isEmpty ? 'Email can\'t be empty.' : null,
-            onSaved: (val) => _email = val),
+          key: new Key('email'),
+          decoration: new InputDecoration(labelText: 'Email'),
+          autocorrect: false,
+          validator: (val) => val.isEmpty ? 'Email can\'t be empty.' : null,
+          onSaved: (val) => _email = val,
+        ),
       ),
       padded(
         child: new TextFormField(
-            key: new Key('password'),
-            decoration: new InputDecoration(labelText: 'Password'),
-            obscureText: true,
-            autocorrect: false,
-            validator: (val) =>
-                val.isEmpty ? 'Password can\'t be empty.' : null,
-            onSaved: (val) => _password = val),
+          key: new Key('password'),
+          decoration: new InputDecoration(labelText: 'Password'),
+          obscureText: true,
+          autocorrect: false,
+          validator: (val) => val.isEmpty ? 'Password can\'t be empty.' : null,
+          onSaved: (val) => _password = val,
+        ),
       ),
     ];
   }
@@ -193,8 +196,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: new RaisedButton(
                     elevation: 7.0,
                     shape: new RoundedRectangleBorder(
-                        borderRadius: BorderRadius
-                            .all(Radius.circular(_buttonHeight / 2))),
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(_buttonHeight / 2)),
+                    ),
                     color: Colors.white,
                     key: new Key('login/register'),
                     child: new Column(

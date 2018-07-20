@@ -33,7 +33,7 @@ class HomePageState extends State<HomePage> {
       case 1:
         return new UserDetailsPage(user: this.user);
       // case 2:
-        // return new ByePage();
+      // return new ByePage();
 
       default:
         return new Text("Error");
@@ -59,23 +59,27 @@ class HomePageState extends State<HomePage> {
     var drawerOptions = <Widget>[];
     for (var i = 0; i < widget.drawerItems.length; i++) {
       var d = widget.drawerItems[i];
-      drawerOptions.add(new ListTile(
-        leading: new Icon(d.icon),
-        title: new Text(d.title),
-        selected: i == _selectedDrawerIndex,
-        onTap: () => _onSelectItem(i),
-      ));
+      drawerOptions.add(
+        new ListTile(
+          leading: new Icon(d.icon),
+          title: new Text(d.title),
+          selected: i == _selectedDrawerIndex,
+          onTap: () => _onSelectItem(i),
+        ),
+      );
     }
     return new Scaffold(
       appBar: new AppBar(
         title: new SafeArea(
-            child: new Text(widget.drawerItems[_selectedDrawerIndex].title)),
+          child: new Text(widget.drawerItems[_selectedDrawerIndex].title),
+        ),
       ),
       drawer: new HomeDrawer(
-          auth: widget.auth,
-          onSignOut: widget.onSignOut,
-          user: user,
-          drawerOptions: drawerOptions),
+        auth: widget.auth,
+        onSignOut: widget.onSignOut,
+        user: user,
+        drawerOptions: drawerOptions,
+      ),
       body: _getDrawerItemWidget(_selectedDrawerIndex),
     );
   }
