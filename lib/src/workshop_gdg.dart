@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // Acá declaramos cuales son las partes de la aplicación y de esa forma el código esta todo unido
@@ -30,8 +31,9 @@ class WorkshopGDGApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // En este caso, vamos usar el diseño de Material Design
+    // Existe la opción de trabajar la app con el diseño de Cupertino
     return new MaterialApp(
-      // Con esta línea a continuación, hacemos que la app no tenga el flag de Debug
+      // Con esta línea a continuación, hacemos que la app no tenga el banner de Debug en las vistas
       debugShowCheckedModeBanner: false,
       title: 'Workshop GDG',
       theme: new ThemeData(

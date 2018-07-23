@@ -2,10 +2,11 @@ part of workshopgdg;
 
 // Este Widget al manejar estado, lo extendemos de StatefulWidget
 class RootPage extends StatefulWidget {
+  // Explicar lo que hace el constructor para que se setee solo
   RootPage({Key key, this.auth}) : super(key: key);
   final BaseAuth auth;
 
-// Acá creamos el State del Widget
+// Acá creamos el State del Widget ***
   @override
   State<StatefulWidget> createState() => new _RootPageState();
 }

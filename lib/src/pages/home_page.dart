@@ -35,8 +35,15 @@ class HomePageState extends State<HomePage> {
       // case 2:
       // return new ByePage();
 
+
+      // Agramos algo con Cupertino layout
       default:
-        return new Text("Error");
+        return Center(
+          child: new CupertinoButton(
+            child: new Text("CHAU"),
+            onPressed: () => {},
+          ),
+        );
     }
   }
 
